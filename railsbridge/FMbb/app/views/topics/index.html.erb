@@ -1,0 +1,22 @@
+<table class="table table-striped">
+<tr>
+	<th>Title</th>
+	<th>Description</th>
+	<th>Author</th>
+	<th>Replies</th>
+	<th>Date Posted</th>
+</tr>
+<% @topics.each do |topic| %>
+	<tr>
+		<td><%= link_to topic.title.truncate(20), topic_path(topic.id) %></td>
+		<td><%= topic.description.truncate(40) %></td>
+		<td><%= topic.user.email %></td>
+		<td>#N</td>
+		<td><%= topic.created_at.strftime("%B %d, %Y") %></td>
+	</tr>
+<% end %>
+</table>
+
+<div class="row">
+	<%= button_to 'New Post', new_topic_path, :class=> 'col-md-1 col-md-offset-1', method: :get %>
+</div>

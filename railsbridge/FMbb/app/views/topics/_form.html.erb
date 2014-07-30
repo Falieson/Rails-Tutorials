@@ -1,0 +1,13 @@
+<%= form_for @topic, :html => {:class => "form-horizontal"} do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: "col-sm-2 control-label" %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, class: "col-sm-2 control-label" %>
+    <%= f.text_area :description, size: '60x6' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Create Topic", class: "btn btn-default btn-primary col-sm-2 col-sm-offset-2" %>
+  </div>
+<% end %>
