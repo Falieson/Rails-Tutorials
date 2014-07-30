@@ -1,0 +1,1 @@
+You will find that some of the repos are 'locked'. This is because I was using git locally to store changes with many of these tutorials before deciding to upload all of them to a singular repository. Some time soon I will go through and fix this issue, 'unlocking' each of the subfolders so they all are organized into a single repo.
