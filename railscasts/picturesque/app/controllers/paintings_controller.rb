@@ -24,12 +24,12 @@ class PaintingsController < ApplicationController
   # POST /paintings
   # POST /paintings.json
   def create
-    @painting = Painting.new(painting_params)
+    @painting = Painting.create(painting_params)
 
     respond_to do |format|
       if @painting.save
-        format.html { redirect_to @painting.gallery, notice: 'Painting was successfully created.' }
-        format.json { render :show, status: :created, location: @painting.gallery }
+        format.html { redirect_to paintings_path, notice: 'Painting was successfully created.' }
+        format.json { render :show, status: :created, location: paintings_path }
       else
         format.html { render :new }
         format.json { render json: @painting.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class PaintingsController < ApplicationController
   def update
     respond_to do |format|
       if @painting.update(painting_params)
-        format.html {  redirect_to @painting.gallery, notice: 'Painting was successfully updated.' }
-        format.json { render :show, status: :ok, location: @painting.gallery}
+        format.html { redirect_to paintings_path, notice: 'Painting was successfully updated.' }
+        format.json { render :show, status: :ok, location: paintings_path}
       else
         format.html { render :edit }
         format.json { render json: @painting.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class PaintingsController < ApplicationController
   def destroy
     @painting.destroy
     respond_to do |format|
-      format.html {  redirect_to @painting.gallery, notice: 'Painting was successfully destroyed.' }
+      format.html { redirect_to paintings_path, notice: 'Painting was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -1,27 +1,11 @@
 <h1>Listing paintings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Gallery</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div id="paintings">
+  <%= render @paintings %>
+</div>
+<div class="clear"></div>
 
-  <tbody>
-    <% @paintings.each do |painting| %>
-      <tr>
-        <td><%= painting.name %></td>
-        <td><%= painting.gallery_id %></td>
-        <td><%= link_to 'Show', painting %></td>
-        <td><%= link_to 'Edit', edit_painting_path(painting) %></td>
-        <td><%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Painting', new_painting_path %>
+<%= form_for Painting.new do |f| %>
+  <%= f.label :image, "Upload paintings:" %>
+  <%= f.file_field :image, :multiple => true, name: "painting[image]" %>
+<% end %>

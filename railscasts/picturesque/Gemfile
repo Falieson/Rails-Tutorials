@@ -3,7 +3,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'jquery-fileupload-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
