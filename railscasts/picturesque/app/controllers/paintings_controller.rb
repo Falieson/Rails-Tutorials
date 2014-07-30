@@ -25,16 +25,6 @@ class PaintingsController < ApplicationController
   # POST /paintings.json
   def create
     @painting = Painting.create(painting_params)
-
-    respond_to do |format|
-      if @painting.save
-        format.html { redirect_to paintings_path, notice: 'Painting was successfully created.' }
-        format.json { render :show, status: :created, location: paintings_path }
-      else
-        format.html { render :new }
-        format.json { render json: @painting.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /paintings/1
