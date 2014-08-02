@@ -4,3 +4,6 @@ Rails 4.1.4
 
 Build a basic picture gallery, and add a jquery drag and drop image uploader to it.
 Carrierwave and RImageMagick as the base.
+
+http://railscasts.com/episodes/253-carrierwave-file-uploads
+http://railscasts.com/episodes/381-jquery-file-upload
