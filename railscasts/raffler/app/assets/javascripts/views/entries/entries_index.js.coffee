@@ -4,19 +4,24 @@ class Raffler.Views.EntriesIndex extends Backbone.View
 
   events:
   	'submit #new_entry': 'createEntry'
+  	'click #draw': 'drawWinner'
 
   initialize: ->
   	@collection.on('reset', @render, this)
-  	@collection.on('add', @render, this)
+  	@collection.on('add', @appendEntry, this)
 
   render: ->
   	$(@el).html(@template())
   	@collection.each(@appendEntry)
   	this
 
-  appendEntry: (entry) ->
+  appendEntry: (entry) =>
   	view = new Raffler.Views.Entry(model: entry)
-  	$('#entries').append(view.render().el)
+  	@$('#entries').append(view.render().el)
+
+  drawWinner: (event) ->
+  	event.preventDefault()
+  	@collection.drawWinner()
 
   createEntry: (event) ->
   	event.preventDefault()

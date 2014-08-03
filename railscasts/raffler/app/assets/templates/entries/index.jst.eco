@@ -1,5 +1,5 @@
 <h1>Raffler</h1>
-
+<button id="draw" style="center">Draw Winner</button>
 <form id="new_entry">
 	<input type="text" name="name" id="new_entry_name">
 	<input type="submit" value="Add">
