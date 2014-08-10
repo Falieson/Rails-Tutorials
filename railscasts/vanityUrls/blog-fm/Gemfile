@@ -1,15 +1,12 @@
 source 'http://rubygems.org'
-
-gem 'rails'
-
-gem 'sqlite3'
-
 gem 'execjs'
 gem 'therubyracer'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'uglifier'
-end
+gem 'rails'
+gem 'sqlite3'
+
+gem 'coffee-rails', '~> 4.0.0'
+gem 'sass-rails'
+gem 'uglifier'
 
 gem 'jquery-rails'
